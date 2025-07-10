@@ -174,21 +174,31 @@ const users = [
 
 const getUsersName = users.map((item) => item.name)
 console.log(getUsersName);
+const getUsersWithEyeColor = (users, color) => users.filter((item) => item.eyeColor === color)
+  
+;
 
-const getUsersWithEyeColor = (users, color) => users.filter((item) => item.eyeColor === color);
-console.log(getUsersWithEyeColor );
+console.log(getUsersWithEyeColor(users, 'blue')); // [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Carey Barr]
 
   
+const getUsersWithGender = (users, gender) => users.filter((item) => item.gender === gender)
+
+;
+
+console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 
-
-const getInactiveUsers = users => users.filter((item) => !item.isActive);
+const getInactiveUsers = users => users.filter((item) => item.isActive === false)
+  
+;
 
 console.log(getInactiveUsers(users)); // [об'єкт Moore Hensley, об'єкт Ross Vazquez, об'єкт Blackburn Dotson]
 
-const getUserWithEmail = (users, email) => users.find((item) =>users.email);
-  
 
+
+const getUserWithEmail = (users, email) => users.find((item) => item.email === email)
+  
+;
 
 console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {об'єкт користувача Sheree Anthony}
 console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
